@@ -17,8 +17,13 @@ class MainActivity : AppCompatActivity() {
         var car = Car("Citroen", "C3")
         var moto = Moto("Honda", "CBR600")
         var boat = Boat("Amel", "55", 4)
+        var deltaWing = object : Vehicle("Delta", "Wing") {
+            override fun acelerate() {
+                speed = speed!! + 9.8F
+            }
 
-        var vehicles = arrayListOf(car, moto,boat)
+        }
+        var vehicles : List<Vehicle> = arrayListOf(car, moto,boat,deltaWing)
 
         buttonAcelerate.setOnClickListener {
             for ( v in vehicles ){
@@ -30,6 +35,8 @@ class MainActivity : AppCompatActivity() {
                 if (v is Boat){
                     textViewLog.text = textViewLog.text.toString() +"\n"+
                             "Active Sails "+v.sailsOn
+
+                    (v as Boat).sailsOn
                 }
             }
         }

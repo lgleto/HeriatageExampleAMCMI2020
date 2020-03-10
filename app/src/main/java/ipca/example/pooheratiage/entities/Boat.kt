@@ -19,4 +19,6 @@ class Boat : Vehicle {
         speed = speed!! + 5f*sailsOn
     }
 
+
+
 }

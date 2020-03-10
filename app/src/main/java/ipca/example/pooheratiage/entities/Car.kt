@@ -22,4 +22,8 @@ class Car : Vehicle {
         handBrake = false
     }
 
+    override fun acelerate() {
+        speed = speed!! + 20f
+    }
+
 }

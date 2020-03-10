@@ -3,7 +3,7 @@ package ipca.example.pooheratiage.entities
 //
 // Created by lourencogomes on 2020-03-05.
 //
-open class Vehicle {
+abstract class Vehicle  {
 
     var brand : String = ""
     var model : String = String()
@@ -15,9 +15,7 @@ open class Vehicle {
         speed = 0f
     }
 
-    open fun acelerate() {
-        speed = speed!! + 10f
-    }
+    abstract fun acelerate()
 
     fun modelAndBrand():String{
         var nb = model + " " + brand
